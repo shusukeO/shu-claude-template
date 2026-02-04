@@ -1,0 +1,39 @@
+{
+  "_comment": "このファイルを ~/.claude/settings.json または プロジェクトの .claude/settings.json にコピーして使用してください",
+
+  "mcpServers": {
+    "serena": {
+      "_comment": "コードベースのシンボル解析（関数・クラス・変数の定義・参照を高速検索）",
+      "command": "uvx",
+      "args": ["serena", "--workspace", "."]
+    },
+    "context7": {
+      "_comment": "ライブラリの最新ドキュメント参照（npm, PyPI等のパッケージドキュメントを取得）",
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "playwright": {
+      "_comment": "ブラウザ操作・E2Eテスト（Webページの操作、スクリーンショット取得）",
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp"]
+    }
+  },
+
+  "permissions": {
+    "_comment": "許可するコマンドのパターン（正規表現）",
+    "allow": [
+      "npm run *",
+      "npm test *",
+      "npm install *",
+      "npx *",
+      "git *",
+      "ls *",
+      "cat *",
+      "grep *"
+    ],
+    "deny": [
+      "rm -rf *",
+      "sudo *"
+    ]
+  }
+}

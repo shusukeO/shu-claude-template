@@ -1,0 +1,91 @@
+# CLAUDE.md テンプレート
+
+このファイルをプロジェクトルートに `CLAUDE.md` としてコピーし、プロジェクトに合わせて編集してください。
+
+---
+
+# CLAUDE.md
+
+このファイルはClaude Codeがプロジェクトを理解するためのコンテキストを提供します。
+
+## Development Commands
+
+```bash
+# 依存関係のインストール
+npm install
+
+# 開発サーバーの起動
+npm run dev
+
+# ビルド
+npm run build
+
+# テストの実行
+npm test
+
+# リントの実行
+npm run lint
+
+# フォーマットの実行
+npm run format
+```
+
+## Architecture Overview
+
+```
+.
+├── src/
+│   ├── components/     # UIコンポーネント
+│   ├── pages/          # ページコンポーネント
+│   ├── hooks/          # カスタムフック
+│   ├── utils/          # ユーティリティ関数
+│   ├── types/          # 型定義
+│   └── services/       # API通信・外部サービス連携
+├── public/             # 静的ファイル
+├── tests/              # テストファイル
+└── docs/               # ドキュメント
+```
+
+## Tech Stack
+
+- Language: TypeScript 5.x
+- Runtime: Node.js 20.x
+- Framework: React 18.x / Next.js 14.x
+- Styling: Tailwind CSS 3.x
+- Testing: Vitest / Jest
+- Linting: ESLint, Prettier
+
+## Development Rules
+
+### コーディング規約
+
+- 関数は単一責任の原則に従う
+- コンポーネントは小さく保つ（200行以内を目安）
+- 型は明示的に定義する（`any` の使用は避ける）
+- エラーハンドリングは適切に行う
+
+### Git ブランチ運用
+
+- `main`: 本番環境
+- `develop`: 開発環境
+- `feature/*`: 機能開発
+- `fix/*`: バグ修正
+
+### コミットメッセージ規約
+
+```
+<type>: <subject>
+
+例:
+feat: ユーザー認証機能を追加
+fix: ログインエラーを修正
+docs: READMEを更新
+refactor: API通信処理をリファクタリング
+test: ユーザー認証のテストを追加
+```
+
+### 注意事項
+
+- 環境変数は `.env.local` で管理し、コミットしない
+- APIキーやシークレットはコードに直接記述しない
+- パフォーマンスに影響する変更は事前にレビューを依頼する
