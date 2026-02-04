@@ -103,7 +103,7 @@ cp -r /path/to/shu-claude-template/* /path/to/your-project/
 
 ## 新しいコマンドの追加
 
-1. `.commands/`ディレクトリに新しい`.md`ファイルを作成
+1. `.claude/commands/`ディレクトリに新しい`.md`ファイルを作成
 2. ファイル名がコマンド名になる（例: `my-command.md` → `/my-command`）
 3. Markdown形式でプロンプトを記述
 
@@ -111,3 +111,7 @@ cp -r /path/to/shu-claude-template/* /path/to/your-project/
 
 - コマンドは汎用的に作られているため、プロジェクトに合わせて適宜修正してください
 - 特定の技術スタック（React, Python等）を使用する場合は、該当するベストプラクティスをコマンドに追加することを推奨します
+
+## 参考
+
+- lint-ja コマンドは [textlint-rule-preset-ai-writing](https://github.com/textlint-ja/textlint-rule-preset-ai-writing) を参考に作成されています
