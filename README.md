@@ -1,4 +1,4 @@
-[English](#english) | [日本語](#japanese)
+[🇺🇸 English](#english) | [🇯🇵 日本語](#japanese)
 
 ---
 
