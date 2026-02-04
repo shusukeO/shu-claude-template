@@ -1,3 +1,135 @@
+[English](#english) | [日本語](#japanese)
+
+---
+
+# English
+
+# Claude Code Setup Template
+
+A setup template for starting Claude Code in new repositories. Includes custom commands and MCP server configurations that can be customized for your project.
+
+## Purpose
+
+- Quickly set up Claude Code environment in new projects
+- Provide generic custom commands as templates
+- Share and standardize commands within teams
+- Provide MCP server configuration examples
+
+## Quick Start
+
+Copy the contents of this repository to your project root.
+
+```bash
+cp -r /path/to/shu-claude-template/* /path/to/your-project/
+```
+
+## Usage
+
+Commands can be invoked with `/command-name`.
+
+```
+/init-project   # Project initialization
+/review-diff    # Code review
+/sync-docs      # Document synchronization
+/lint-ja        # Japanese writing guidelines
+```
+
+## Included Files
+
+### Template Files
+
+| File                             | Description                       |
+| -------------------------------- | --------------------------------- |
+| `CLAUDE.md.template`             | Project description file template |
+| `.claude/settings.json.template` | MCP server configuration template |
+
+### Commands
+
+| Command        | Description                                                              |
+| -------------- | ------------------------------------------------------------------------ |
+| `init-project` | Project initialization (creates CLAUDE.md, analyzes structure)           |
+| `review-diff`  | Reviews diff from main branch, identifies and fixes issues               |
+| `sync-docs`    | Checks and fixes discrepancies between docs (CLAUDE.md, README.md, etc.) |
+| `lint-ja`      | Guidelines for writing natural Japanese documents                        |
+
+### Document Management
+
+| Directory    | Description              |
+| ------------ | ------------------------ |
+| `docs/todo/` | Incomplete tasks/plans   |
+| `docs/done/` | Completed tasks/archives |
+
+## Directory Structure
+
+```
+.
+├── README.md
+├── CLAUDE.md.template          # CLAUDE.md template
+├── docs/                       # Document management
+│   ├── todo/                   # Incomplete tasks
+│   │   └── .gitkeep
+│   └── done/                   # Completed tasks
+│       └── .gitkeep
+└── .claude/
+    ├── settings.json.template  # MCP server config template
+    └── commands/               # Custom commands
+        ├── init-project.md     # Project initialization
+        ├── lint-ja.md          # Japanese writing guide
+        ├── review-diff.md      # Code review
+        └── sync-docs.md        # Document sync
+```
+
+## MCP Server Configuration
+
+`.claude/settings.json.template` includes the following MCP server configuration examples.
+
+| Server     | Description                                                  |
+| ---------- | ------------------------------------------------------------ |
+| Serena     | Codebase symbol analysis (fast search for functions/classes) |
+| Context7   | Latest library documentation reference                       |
+| Playwright | Browser automation / E2E testing                             |
+
+## Customization Examples
+
+### Customizing review-diff
+
+To add project-specific review criteria, edit `.claude/commands/review-diff.md`.
+
+```markdown
+# Example additional review criteria
+
+- DDD design compliance
+- Framework-specific best practices (React/Vue, etc.)
+- Project-specific coding standards
+```
+
+### Customizing sync-docs
+
+Edit the check targets according to your project's document structure.
+
+## Adding New Commands
+
+1. Create a new `.md` file in the `.claude/commands/` directory
+2. The filename becomes the command name (e.g., `my-command.md` → `/my-command`)
+3. Write the prompt in Markdown format
+
+## Notes
+
+- Commands are designed to be generic; customize them as needed for your project
+- When using specific tech stacks (React, Python, etc.), consider adding relevant best practices to the commands
+
+## References
+
+- The lint-ja command is based on [textlint-rule-preset-ai-writing](https://github.com/textlint-ja/textlint-rule-preset-ai-writing)
+
+## License
+
+MIT License
+
+---
+
+# Japanese
+
 # Claude Code セットアップテンプレート
 
 新しいリポジトリでClaude Codeを使い始める際のセットアップテンプレートです。カスタムコマンド、MCPサーバー設定を含み、プロジェクトに合わせてカスタマイズして使用できます。
@@ -59,10 +191,10 @@ cp -r /path/to/shu-claude-template/* /path/to/your-project/
 .
 ├── README.md
 ├── CLAUDE.md.template          # CLAUDE.mdのテンプレート
-├── docs/                   # ドキュメント管理
-│   ├── todo/               # 未完了タスク
+├── docs/                       # ドキュメント管理
+│   ├── todo/                   # 未完了タスク
 │   │   └── .gitkeep
-│   └── done/               # 完了タスク
+│   └── done/                   # 完了タスク
 │       └── .gitkeep
 └── .claude/
     ├── settings.json.template  # MCPサーバー設定テンプレート
@@ -87,7 +219,7 @@ cp -r /path/to/shu-claude-template/* /path/to/your-project/
 
 ### review-diff のカスタマイズ
 
-プロジェクト固有のレビュー観点を追加する場合、`.commands/review-diff.md`を編集します。
+プロジェクト固有のレビュー観点を追加する場合、`.claude/commands/review-diff.md`を編集します。
 
 ```markdown
 # 追加するレビュー観点の例
@@ -115,3 +247,7 @@ cp -r /path/to/shu-claude-template/* /path/to/your-project/
 ## 参考
 
 - lint-ja コマンドは [textlint-rule-preset-ai-writing](https://github.com/textlint-ja/textlint-rule-preset-ai-writing) を参考に作成されています
+
+## ライセンス
+
+MIT License
