@@ -121,6 +121,7 @@ cp -r /path/to/shu-claude-template/* /path/to/your-project/
 ## 参考
 
 - lint-ja コマンドは [textlint-rule-preset-ai-writing](https://github.com/textlint-ja/textlint-rule-preset-ai-writing) を参考に作成されています
+- lint-ja の文章規範（段落構成・論証の厳密さ・演出の抑制など）は [日本語技術文書の文章規範（k16shikano）](https://gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d) を参考にしています
 
 ## ライセンス
 
@@ -247,6 +248,7 @@ Edit the check targets according to your project's document structure.
 ## References
 
 - The lint-ja command is based on [textlint-rule-preset-ai-writing](https://github.com/textlint-ja/textlint-rule-preset-ai-writing)
+- The writing norms in lint-ja (paragraph structure, rigorous argumentation, restraint in dramatization, etc.) are based on [Japanese Technical Writing Norms by k16shikano](https://gist.github.com/k16shikano/fd287c3133457c4fd8f5601d34aa817d)
 
 ## License
 
