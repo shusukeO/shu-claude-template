@@ -1,7 +1,6 @@
 ---
 name: review-diff
 description: main ブランチとの差分と未追跡ファイルをレビューし、指摘事項を出力する
-disable-model-invocation: true
 context: fork
 effort: max
 allowed-tools: Read, Grep, Glob, Bash(git diff:*), Bash(git status:*), Bash(git log:*)

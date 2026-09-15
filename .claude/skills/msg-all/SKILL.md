@@ -3,7 +3,6 @@ name: msg-all
 description: 未ステージのgit変更をstageしてコミットメッセージを用意する（コミットはしない）
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git diff:*), Bash(git log:*), Bash(printf:*), Bash(pbcopy:*)
 model: haiku
-disable-model-invocation: true
 ---
 
 # msg-all

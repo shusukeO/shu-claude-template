@@ -1,7 +1,6 @@
 ---
 name: init-project
 description: 新しいプロジェクトで Claude Code を使い始めるための初期設定。構造と技術スタックを把握し、CLAUDE.md と docs/ を作成する
-disable-model-invocation: true
 allowed-tools: Read, Grep, Glob, Write, Bash(ls:*), Bash(mkdir:*), Bash(touch:*)
 ---
 

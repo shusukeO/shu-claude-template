@@ -1,7 +1,6 @@
 ---
 name: sync-docs
 description: CLAUDE.md、README.md、docs/ 配下のドキュメントと実装の差異をチェックして修正する
-disable-model-invocation: true
 allowed-tools: Read, Grep, Glob, Edit, Bash(ls:*), Bash(find:*), Bash(tree:*)
 ---
 

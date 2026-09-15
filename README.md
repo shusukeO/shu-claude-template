@@ -129,7 +129,6 @@ name: my-skill
 description: 何をするか、いつ使うか。Claude はこの文を見て自動的に読み込むかを判断する
 argument-hint: [引数のヒント]
 allowed-tools: Read, Grep, Bash(git diff:*)
-disable-model-invocation: true
 ---
 ```
 
@@ -137,7 +136,6 @@ disable-model-invocation: true
 
 - `description` は常にコンテキストに載る唯一の部分なので、用途と使う場面のキーワードを入れる
 - `allowed-tools` は列挙したツールの許可プロンプトを省略する。他のツールを禁止するわけではない
-- `disable-model-invocation: true` を付けると、ユーザーが `/` で呼んだときだけ動く。コミットやファイル生成など副作用のあるスキルに付ける
 - `` !`command` `` と書くと、Claude に渡す前にコマンドが実行され、出力が埋め込まれる。`git diff` の結果などはこの形で渡す
 - `context: fork` を付けると、独立したサブエージェントで実行され、結果だけが元の会話に返る。大きな差分を読むレビューなど、元の会話のコンテキストを消費したくないスキルに付ける
 
@@ -287,7 +285,6 @@ name: my-skill
 description: What it does and when to use it. Claude reads this to decide whether to load the skill automatically
 argument-hint: [argument hint]
 allowed-tools: Read, Grep, Bash(git diff:*)
-disable-model-invocation: true
 ---
 ```
 
@@ -295,7 +292,6 @@ Key fields:
 
 - `description` is the only part always kept in context, so include the purpose and trigger keywords
 - `allowed-tools` skips permission prompts for the listed tools. It does not block other tools
-- `disable-model-invocation: true` makes the skill run only when the user invokes it with `/`. Use it for skills with side effects such as committing or generating files
 - `` !`command` `` runs the command before the prompt reaches Claude and embeds the output. Pass things like `git diff` results this way
 - `context: fork` runs the skill in an isolated subagent and returns only the result to the main conversation. Use it for skills that read a lot, such as reviewing a large diff, so they do not consume the main context
 

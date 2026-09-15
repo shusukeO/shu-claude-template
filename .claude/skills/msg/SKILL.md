@@ -3,7 +3,6 @@ name: msg
 description: ステージ済みの変更だけからコミットメッセージを用意する（git add もコミットもしない）
 allowed-tools: Bash(git status:*), Bash(git diff:*), Bash(git log:*), Bash(printf:*), Bash(pbcopy:*)
 model: haiku
-disable-model-invocation: true
 ---
 
 # msg
