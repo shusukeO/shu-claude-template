@@ -1,15 +1,26 @@
+---
+name: review-diff
+description: main ブランチとの差分と未追跡ファイルをレビューし、指摘事項を出力する
+disable-model-invocation: true
+context: fork
+effort: max
+allowed-tools: Read, Grep, Glob, Bash(git diff:*), Bash(git status:*), Bash(git log:*)
+---
+
 # review-diff
 
-mainブランチとの差分と新しいファイルをultrathinkでレビューします。
+mainブランチとの差分と新しいファイルをレビューします。このスキルは独立したサブエージェントで実行され、レビュー結果だけが元の会話に返ります。以下のコンテキストは収集済みです。差分の取得のために `git diff` や `git status` を再実行する必要はありません。
 
-## Prompt
+## コンテキスト
 
-以下の手順を実行してください。
+- 現在のブランチ: !`git branch --show-current`
+- main ブランチとの差分: !`git diff main`
+- 作業ツリーの状態（`??` が未追跡ファイル）: !`git status --short`
 
-1. `git diff main` でmainブランチとの差分を確認
-2. `git status` で新しいファイル(untracked files)を確認
-3. 新しいファイルがあれば、それらを読み取る
-4. 以下の観点からコードレビューを実施
+## 手順
+
+1. 未追跡ファイルがあれば、それらを読み取る
+2. 以下の観点からコードレビューを実施
    - アーキテクチャの適切性
    - バグや潜在的な問題
    - パフォーマンスの問題
@@ -34,7 +45,7 @@ mainブランチとの差分と新しいファイルをultrathinkでレビュー
 
 ### 指摘事項
 
-すべての問題・改善提案を番号付きで出力します。各項目には以下を含めます。
+すべての問題と改善提案を番号付きで出力します。各項目には以下を含めます。
 
 - ファイルパスと行番号
 - 問題の種類（重大/改善提案/軽微）

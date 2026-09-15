@@ -1,6 +1,6 @@
 # Claude Code ステータスライン設定
 
-コンテキストの残りトークン割合をステータスラインに表示する設定。
+コンテキストの残りトークン割合をステータスラインに表示する設定をまとめる。
 
 表示例:
 
@@ -19,7 +19,7 @@ Opus 4.8 (1M) · svsfmlp-web (main) · 85%
 ## セットアップ手順（新しい PC）
 
 1. `~/.claude/statusline.sh` を下記内容で作成する
-2. 実行権限を付与する: `chmod +x ~/.claude/statusline.sh`
+2. 実行権限を付与する（`chmod +x ~/.claude/statusline.sh`）
 3. `~/.claude/settings.json` に `statusLine` を追記する
 4. Claude Code を再起動する
 
@@ -29,7 +29,7 @@ Opus 4.8 (1M) · svsfmlp-web (main) · 85%
 
 ```bash
 #!/bin/bash
-# Claude Code ステータスライン: モデル名・ディレクトリ・コンテキスト残り割合を表示
+# Claude Code ステータスライン: モデル名、ディレクトリ、コンテキスト残り割合を表示
 # 例: Opus 4.8 (1M) · svsfmlp-web (main) · 85%
 input=$(cat)
 

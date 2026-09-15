@@ -1,13 +1,15 @@
 ---
+name: msg-all
 description: 未ステージのgit変更をstageしてコミットメッセージを用意する（コミットはしない）
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git diff:*), Bash(git log:*), Bash(printf:*), Bash(pbcopy:*)
 model: haiku
+disable-model-invocation: true
 ---
 
 # msg-all
 
 以下のコンテキストは収集済み（`git add -A` も実行済み）。
-**追加で git status / git diff / git log を実行しないこと。**
+追加で git status / git diff / git log を実行しない。
 
 ## コンテキスト
 
@@ -20,7 +22,7 @@ model: haiku
 ステージ済み差分が空なら「変更はありません」と報告して終了する。
 
 差分がある場合、最近のコミットスタイル（`feat:` / `fix:` などのプレフィックス + 日本語、1 行）に
-合わせたコミットメッセージを生成し、**1 回の Bash 呼び出し**で以下を実行する：
+合わせたコミットメッセージを生成し、1 回の Bash 呼び出しで以下を実行する。
 
 ```bash
 printf '%s\n' "メッセージ" > .git/MERGE_MSG && printf '%s' "メッセージ" | pbcopy
@@ -32,4 +34,4 @@ printf '%s\n' "メッセージ" > .git/MERGE_MSG && printf '%s' "メッセージ
 
 ## 禁止事項
 
-- **`git commit` / `git push` は絶対に実行しないこと**（コミットはユーザーが VSCode で行う）
+- **`git commit` / `git push` は実行しないこと**（コミットはユーザーが VSCode からする）

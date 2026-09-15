@@ -3,7 +3,7 @@
 
   "mcpServers": {
     "serena": {
-      "_comment": "コードベースのシンボル解析（関数・クラス・変数の定義・参照を高速検索）",
+      "_comment": "コードベースのシンボル解析（関数、クラス、変数の定義と参照を高速に検索）",
       "command": "uvx",
       "args": ["serena", "--workspace", "."]
     },
@@ -13,7 +13,7 @@
       "args": ["-y", "@upstash/context7-mcp"]
     },
     "playwright": {
-      "_comment": "ブラウザ操作・E2Eテスト（Webページの操作、スクリーンショット取得）",
+      "_comment": "ブラウザ操作と E2E テスト（Webページの操作、スクリーンショット取得）",
       "command": "npx",
       "args": ["-y", "@playwright/mcp"]
     }
