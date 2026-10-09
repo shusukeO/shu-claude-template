@@ -32,6 +32,7 @@ cp -r /path/to/shu-claude-template/* /path/to/your-project/
 /review-diff    # コードレビュー
 /sync-docs      # ドキュメント同期
 /lint-ja        # 日本語ライティング
+/marp-deck      # Marp でスライドを作るときの注意点
 /msg            # ステージ済み変更からコミットメッセージを用意
 /msg-all        # 全変更をステージしてコミットメッセージを用意
 ```
@@ -55,6 +56,7 @@ cp -r /path/to/shu-claude-template/* /path/to/your-project/
 | `review-diff`  | mainブランチとの差分を独立したサブエージェントでレビューし、問題点を指摘する |
 | `sync-docs`    | ドキュメント（CLAUDE.md, README.md等）と実装の差異をチェック、修正する |
 | `lint-ja`      | 日本語ドキュメントを自然な文体で作成、編集するためのガイドライン       |
+| `marp-deck`    | Marp で発表スライドを作り、git で管理するときに気をつけること         |
 | `msg`          | ステージ済みの変更からコミットメッセージを生成し、クリップボードにコピーする |
 | `msg-all`      | 全変更をステージしてコミットメッセージを生成し、クリップボードにコピーする   |
 
@@ -81,6 +83,7 @@ cp -r /path/to/shu-claude-template/* /path/to/your-project/
     └── skills/                 # カスタムスキル（1スキル1ディレクトリ）
         ├── init-project/SKILL.md   # プロジェクト初期化
         ├── lint-ja/SKILL.md        # 日本語ライティングガイド
+        ├── marp-deck/SKILL.md      # Marp のスライド作成の注意点
         ├── msg/SKILL.md            # コミットメッセージ生成（ステージ済み）
         ├── msg-all/SKILL.md        # コミットメッセージ生成（全変更）
         ├── review-diff/SKILL.md    # コードレビュー
@@ -188,6 +191,7 @@ Skills can be invoked with `/skill-name`.
 /review-diff    # Code review
 /sync-docs      # Document synchronization
 /lint-ja        # Japanese writing guidelines
+/marp-deck      # Notes for making slides with Marp
 /msg            # Prepare a commit message from staged changes
 /msg-all        # Stage all changes and prepare a commit message
 ```
@@ -211,6 +215,7 @@ Claude loads `lint-ja` automatically when writing Japanese documents. The other 
 | `review-diff`  | Reviews the diff from main in an isolated subagent and reports issues    |
 | `sync-docs`    | Checks and fixes discrepancies between docs (CLAUDE.md, README.md, etc.) |
 | `lint-ja`      | Guidelines for writing natural Japanese documents                        |
+| `marp-deck`    | Things to watch when making slides with Marp and managing them in git    |
 | `msg`          | Generates a commit message from staged changes and copies it to the clipboard |
 | `msg-all`      | Stages all changes, generates a commit message and copies it to the clipboard |
 
@@ -237,6 +242,7 @@ Claude loads `lint-ja` automatically when writing Japanese documents. The other 
     └── skills/                 # Custom skills (one directory per skill)
         ├── init-project/SKILL.md   # Project initialization
         ├── lint-ja/SKILL.md        # Japanese writing guide
+        ├── marp-deck/SKILL.md      # Notes for Marp slides
         ├── msg/SKILL.md            # Commit message (staged changes)
         ├── msg-all/SKILL.md        # Commit message (all changes)
         ├── review-diff/SKILL.md    # Code review

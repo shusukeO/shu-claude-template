@@ -1,7 +1,7 @@
 ---
 name: lint-ja
 description: 自然な日本語ドキュメントを書くためのガイドライン。日本語の Markdown、README、設計書、記事などを作成、編集、推敲、校正するときに使う。AI っぽい言い回し、誇張、機械的な強調、絵文字、直訳調の単語を避ける
-argument-hint: [対象ファイルやテーマ]
+argument-hint: "[対象ファイルやテーマ]"
 allowed-tools: Read, Grep, Glob, Edit, Write
 ---
 
